@@ -2,7 +2,7 @@
 
 //import {faker} from '@faker-js/faker';
 
-context('Checkout Journey', () => {
+context('Automation Orange HRM Live', () => {
     beforeEach(() => {
 
          cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
@@ -11,6 +11,14 @@ context('Checkout Journey', () => {
         //  cy.get('#password').type('secret_sauce')
         //  cy.get('#login-button').click()
     
+    })
+    
+    it('Login & Logout',() => {
+        cy.log('Berhasil');
+    })
+
+    it('Sample Test',() => {
+        cy.log('Berhasil');
     })
 
     // it('Checkout 1 Product',() => {

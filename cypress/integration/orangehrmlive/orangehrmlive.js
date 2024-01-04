@@ -6,7 +6,10 @@ context('Automation Orange HRM Live', () => {
 
     const firstName = faker.person.firstName();
     const lastName = faker.person.lastName();
+    const street = faker.location.streetAddress();
     const city = faker.location.city();
+    const province = faker.location.state();
+    const phoneNumber = faker.phone.number('0#########');
 
     beforeEach(() => {
         cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
@@ -39,7 +42,10 @@ context('Automation Orange HRM Live', () => {
         cy.wait(3000)
         cy.get('.oxd-main-menu-item--name').contains('My Info').click()
         cy.get('.orangehrm-tabs-item').contains('Contact Details').click()
+        cy.get('.oxd-label').contains('Street 1').parent().siblings('div').find('input').clear().type(street)
         cy.get('.oxd-label').contains('City').parent().siblings('div').find('input').clear().type(city)
+        cy.get('.oxd-label').contains('State/Province').parent().siblings('div').find('input').clear().type(province)
+        cy.get('.oxd-label').contains('Mobile').parent().siblings('div').find('input').clear().type(phoneNumber)
         cy.get('.oxd-form-actions [type="submit"]').contains('Save').click()
         cy.get('.oxd-toast-content-text').should('contain', 'Successfully Updated')
     })

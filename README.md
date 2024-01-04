@@ -5,7 +5,7 @@
 > Expectation : 'Successfully Logout'
 
 #### * Update Personal Details <br>
-> Expectation : 'Change Name'
+> Expectation : 'New Employee Full Name'
 
 #### * Update contact details <br>
 > Expectation : 'Successfully Updated'

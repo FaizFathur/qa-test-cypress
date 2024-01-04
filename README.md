@@ -24,7 +24,7 @@
 <br>
 
 ##### Result Of Automation Test <br>
-![Result Of Automation Test](https://ibb.co/QJGT8b6)
+![Result Of Automation Test](https://ibb.co/QJGT8b6/Result-Automation-OrangeHRLive.jpeg)
 
 
 

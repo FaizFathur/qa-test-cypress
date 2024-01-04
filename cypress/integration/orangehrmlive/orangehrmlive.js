@@ -4,49 +4,31 @@
 
 context('Automation Orange HRM Live', () => {
     beforeEach(() => {
-
-         cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
-      
-        //  cy.get('#user-name').type('standard_user')
-        //  cy.get('#password').type('secret_sauce')
-        //  cy.get('#login-button').click()
-    
+        cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+        cy.get('[name="username"]').type('Admin')
+        cy.get('[name="password"]').type('admin123')
+        cy.get('[type="submit"]').click()
     })
     
     it('Login & Logout',() => {
-        cy.log('Berhasil');
+        cy.wait(3000)
+        cy.get('[class="oxd-userdropdown-name"]').click()
+        cy.get('.oxd-userdropdown-link').contains('Logout').click()
+        cy.get('.orangehrm-login-title').should('contain', 'Login')
     })
 
-    it('Sample Test',() => {
-        cy.log('Berhasil');
+    it.only('Update Personal Details',() => {
+        cy.wait(3000)
+        cy.get('.oxd-main-menu-item--name').contains('My Info').click()
+        cy.get('.orangehrm-tabs-item').contains('Personal Details').click()
+        cy.get('[name="firstName"]').clear().type('Denias')
+        cy.get('[name="lastName"]').clear().type('Sadi')
+        //cy.get('.orangehrm-vertical-padding').children('.submit').click()
+        cy.get('[type="submit"]').parent('.oxd-form-actions').parent('.oxd-form').parent('.orangehrm-vertical-padding').contains('Save').click()
+        cy.reload()
+        cy.wait(3000)
+        cy.get('.oxd-userdropdown-name').should('contain', 'Denias Sadi')
     })
-
-    // it('Checkout 1 Product',() => {
-    //      cy.get('.inventory_item_name').contains('Sauce Labs Backpack').click()
-    //      cy.get('#add-to-cart-sauce-labs-backpack').click()
-    //      cy.get('#shopping_cart_container').click()
-
-    //      //next page
-    //      cy.url().should('include', '/cart')
-    //      cy.get('#checkout').click()
-
-    //      //next page
-    //      cy.url().should('include', '/checkout-step-one')
-    //      cy.get('#first-name').type('Qwertry')
-    //      cy.get('#last-name').type('Asdfg')
-    //      cy.get('#postal-code').type('12321')
-    //      cy.get('#continue').click()
-
-    //      //next page
-    //      cy.url().should('include', '/checkout-step-two')
-    //      cy.get('#finish').click()
-
-    //      //next page
-    //      cy.url().should('include', '/checkout-complete')
-    //      cy.get('#checkout_complete_container').should('contain', 'THANK YOU FOR YOUR ORDER')
-
-    // })
-
     
 
  })

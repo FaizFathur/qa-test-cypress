@@ -1,23 +1,24 @@
 {
-  "name": "qa-frontend-cypress",
+  "name": "qa-test-cypress",
   "version": "1.0.0",
-  "description": "",
+  "description": "### FEATURE TESTED: #### * Login & Logout <br> > Expectation : 'Successfully Logout'",
   "main": "cypress.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/FaizFathur/qa-frontend-cypress.git"
-  },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/FaizFathur/qa-frontend-cypress/issues"
-  },
-  "homepage": "https://github.com/FaizFathur/qa-frontend-cypress#readme",
   "dependencies": {
     "@faker-js/faker": "^8.3.1",
     "cypress": "^13.6.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FaizFathur/qa-test-cypress.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FaizFathur/qa-test-cypress/issues"
+  },
+  "homepage": "https://github.com/FaizFathur/qa-test-cypress#readme"
 }

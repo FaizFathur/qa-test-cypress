@@ -48,7 +48,6 @@ context('Automation Orange HRM Live', () => {
         cy.get('.oxd-label').contains('Mobile').parent().siblings('div').find('input').clear().type(phoneNumber)
         cy.get('.oxd-form-actions [type="submit"]').contains('Save').click()
         cy.get('.oxd-toast-content-text').should('contain', 'Successfully Updated')
-        // update remote an
     })
     
  })

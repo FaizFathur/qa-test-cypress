@@ -38,75 +38,48 @@
 //=======
 
 
-// // Pseudocode for 1to50 game automation
+// Pseudocode for 1to50 game automation
 
-// // Function to find and click the numbers in order
-// function clickNumbersInOrder() {
-//     let currentNumber = 1;
+// Function to find and click the numbers in order
+function clickNumbersInOrder() {
+    let currentNumber = 1;
   
-//     // Define a function to find and click the number
-//     function clickNumber(number) {
-//       const element = findElementByNumber(number);
-//       if (element) {
-//         element.click();
-//         currentNumber++;
-//       }
-//     }
-  
-//     // Function to find the DOM element by its text content
-//     function findElementByNumber(number) {
-//       const elements = document.querySelectorAll('.number'); // adjust the selector based on the game's structure
-//       for (const element of elements) {
-//         if (element.textContent == number) {
-//           return element;
-//         }
-//       }
-//       return null;
-//     }
-  
-//     // Function to click numbers sequentially with a delay
-//     function clickNumbersSequentially() {
-//       const intervalId = setInterval(() => {
-//         if (currentNumber <= 50) {
-//           clickNumber(currentNumber);
-//         } else {
-//           clearInterval(intervalId);
-//           console.log('Automation completed!');
-//         }
-//       }, 1000); // adjust the delay based on your preference and game speed
-//     }
-  
-//     // Start the automation
-//     clickNumbersSequentially();
-//   }
-  
-//   // Call the function to start the automation
-//   clickNumbersInOrder();
-  
-//=====
-
-function fizzBuzzArray(n) {
-    const resultArray = [];
-
-    for (let i = 1; i <= n; i++) {
-        resultArray.push(fizzBuzzValue(i));
+    // Define a function to find and click the number
+    function clickNumber(number) {
+      const element = findElementByNumber(number);
+      if (element) {
+        element.click();
+        currentNumber++;
+      }
     }
-
-    return resultArray;
-}
-
-function fizzBuzzValue(num) {
-    if (num % 3 === 0 && num % 5 === 0) {
-        return "FizzBuzz";
-    } else if (num % 3 === 0) {
-        return "Fizz";
-    } else if (num % 5 === 0) {
-        return "Buzz";
-    } else {
-        return num.toString();
+  
+    // Function to find the DOM element by its text content
+    function findElementByNumber(number) {
+      const elements = document.querySelectorAll('.number'); // adjust the selector based on the game's structure
+      for (const element of elements) {
+        if (element.textContent == number) {
+          return element;
+        }
+      }
+      return null;
     }
-}
-
-// Generate FizzBuzz array for the first 100 numbers
-const resultArray = fizzBuzzArray(100);
-console.log(resultArray);
+  
+    // Function to click numbers sequentially with a delay
+    function clickNumbersSequentially() {
+      const intervalId = setInterval(() => {
+        if (currentNumber <= 50) {
+          clickNumber(currentNumber);
+        } else {
+          clearInterval(intervalId);
+          console.log('Automation completed!');
+        }
+      }, 1000); // adjust the delay based on your preference and game speed
+    }
+  
+    // Start the automation
+    clickNumbersSequentially();
+  }
+  
+  // Call the function to start the automation
+  clickNumbersInOrder();
+  
